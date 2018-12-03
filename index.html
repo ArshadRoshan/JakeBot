@@ -36,14 +36,14 @@ setInterval(function () {
         eventFire(vote_btn, 'click');
 		votes++;
     } catch (e) { }
-}, 6000);
+}, 10000);
 setInterval(function () {
     select();
 	
 	if(time == -1 && votes >= 24)
 	{
 		votes = 1;
-		time = 30;
+		time = 60;
 		return;
 	}
 	
