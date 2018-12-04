@@ -37,28 +37,19 @@ setInterval(function () {
 		votes++;
     } catch (e) { }
 }, 6000);
-setInterval(function () {
-    select();
-	
-	if(time == -1 && votes >= 24)
-	{
-		votes = 1;
-		time = 10;
-		return;
-	}
-	
-	if(time > 0)
-		return;
-	
-	if(time == -1 && res_text.textContent.indexOf("we have already counted your vote") != -1) {
-		time = 120;
-		return;
-	}
-	
-	time = -1;
-	try { back_btn.click(); } catch (e) { }
-		
-}, 1000, 500);
+setInterval(function() {
+    select()
+    try {
+        radio.click()
+        eventFire(vote_btn, 'click')
+    } catch (e) {  }
+}, 3000)
+setInterval(function() {
+    select()
+    try { back_btn.click() } catch (e) {  }
+}, 8000, 500)
+
+
 /*setInterval(function() {
   
     document.querySelector("p.countdown").innerHTML = "Voting";
