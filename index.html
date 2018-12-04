@@ -63,6 +63,7 @@ setInterval(function() {
   
     document.querySelector("p.countdown").innerHTML = "Voting";
 	if (time > 0) {
+		time=0;
 		time--;
 		document.querySelector("p.countdown").innerHTML = "Prepairing to Vote: " + time;
 	}
